@@ -1,12 +1,13 @@
 
-export const Header1 = ({headname}) => {
+export const Header1 = ({headname, ransom = false}) => {
+    console.log(ransom)
     return (
-        <div className="header1">
+        // <div >
+        <div className={`header1 ${ransom ? 'barrio-regular' : 'anton-regular'}`}>
         <h1>{headname}</h1>
         </div>
     );
     }
-
 export const Header2 = ({headname}) => {
     return (
         <div className="header2">
