@@ -1,0 +1,18 @@
+.lebronCrySection1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: red;
+    width: 99vw;
+    overflow: hidden;
+    background-image: url('/image/lebron1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.lebronCrySection1 h1{
+    background-color: black;
+    color: white;
+    padding: 20px;
+}

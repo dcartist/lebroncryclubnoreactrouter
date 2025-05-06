@@ -1,5 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Barrio&display=swap');
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.barrio-regular {
+  font-family: "Barrio", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; */
   line-height: 1.5;
   font-weight: 400;
 
@@ -25,7 +37,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
 }
