@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Barrio&display=swap');
+@import '/node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 .anton-regular {
   font-family: "Anton", sans-serif;
   font-weight: 400;

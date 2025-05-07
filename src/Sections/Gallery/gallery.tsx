@@ -1,7 +1,7 @@
+import React from 'react';
+
 export const Gallery = () => {
-return (
-    <>
-    test
-    </>
-)
+return    (<div>
+test
+</div>)
 }

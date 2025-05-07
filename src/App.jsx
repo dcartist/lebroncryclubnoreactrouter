@@ -4,6 +4,8 @@ import './App.css'
 import { MainPage } from './Sections/home/mainpage'
 import { Gallery } from "./Sections/Gallery/gallery"
 import {Poem} from "./Sections/Poem/poem"
+import Button from 'react-bootstrap/Button';
+
 function App() {
   const [count, setCount] = useState(0)
 
