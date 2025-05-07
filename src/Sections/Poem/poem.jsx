@@ -1,4 +1,5 @@
 import { Header1 } from "../../Components/Headers/Headers"
+import './poem.css'
 export const Poem = () => {
 return(
     <div>
