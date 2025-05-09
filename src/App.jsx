@@ -6,10 +6,8 @@ import { Gallery } from "./Sections/Gallery/gallery"
 import {Poem} from "./Sections/Poem/poem"
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import AniApp from './Sections/Poem/src/AniApp';
 import { FaArrowUp, FaArrowDown, FaArrowLeft, FaArrowRight, FaCircle } from 'react-icons/fa'; // Use FaCircle for "A" and "B"
 import { Greetings } from './Sections/Greetings/greetings';
-// import { ThreeExperience } from './Sections/Poem/poembasketball';
 
 function App() {
   const [count, setCount] = useState(0)
