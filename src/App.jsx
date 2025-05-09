@@ -6,9 +6,10 @@ import { Gallery } from "./Sections/Gallery/gallery"
 import {Poem} from "./Sections/Poem/poem"
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import AniApp from './Sections/Poem/src/AniApp';
 import { FaArrowUp, FaArrowDown, FaArrowLeft, FaArrowRight, FaCircle } from 'react-icons/fa'; // Use FaCircle for "A" and "B"
-
-
+import { Greetings } from './Sections/Greetings/greetings';
+// import { ThreeExperience } from './Sections/Poem/poembasketball';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,7 +22,8 @@ function App() {
     "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight",
     "b", "a"
   ];
-  
+  // console.log(process.env.REACT_APP_API_URL);
+  console.log(import.meta.env.VITE_API_URL);
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -57,6 +59,7 @@ function App() {
 
   return (
     <>
+    
     <MainPage/>
     <Gallery></Gallery>
     <Poem></Poem>
@@ -132,7 +135,9 @@ function App() {
           </Button>
         </Modal.Footer>
       </Modal>
-
+      <Greetings> </Greetings>
+      {/* <PApp></PApp> */}
+{/* <ThreeExperience></ThreeExperience> */}
     </>
   )
 }
