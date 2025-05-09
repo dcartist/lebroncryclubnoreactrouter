@@ -114,7 +114,7 @@ function App() {
         <input
           ref={inputRef}
           type="text"
-          placeholder="Focus here and enter Konami Code"
+          placeholder="Insert the Konami Code here"
           style={{ padding: '10px', width: '300px' }}
         />
       </div>

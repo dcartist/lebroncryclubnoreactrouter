@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import ListGroup from 'react-bootstrap/ListGroup';
-
-
+import 'animate.css';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 
 
@@ -37,10 +37,15 @@ export function Greetings() {
         {showGreeting && (
             <ListGroup>
                 {greeting.map((item, index) => (
-                    index > 0 && <ListGroup.Item key={index}>
+                    index > 0 && 
+                    <ScrollAnimation animateIn="fadeIn" duration={5000} key={index}>
+   <ListGroup.Item key={index}>
                     <h1>{item[1]}</h1>
                     <p>{item[2]}</p>
                 </ListGroup.Item>
+</ScrollAnimation>
+
+                   
                 ))}
             </ListGroup>
         )}
