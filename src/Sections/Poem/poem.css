@@ -12,3 +12,12 @@
     height: 100vh;
     width: 100vw;
 }
+
+.enormous-text {
+    /* font-size: 3rem;  */
+    font-size: 2rem;
+    font-weight: bold; 
+  }
+p.enormous-text  {
+    margin: 40px auto;
+}
