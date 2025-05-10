@@ -10,11 +10,11 @@ function App() {
   console.log(import.meta.env.VITE_API_URL);
   return (
     <>
+   
       <MainPage />
       <Gallery></Gallery>
-      <Poem></Poem>
-
-      <Greetings> </Greetings>
+      <Poem/>
+      <Greetings/> 
       <Konami></Konami>
     </>
   );
