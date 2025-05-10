@@ -1,9 +1,7 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import ListGroup from 'react-bootstrap/ListGroup';
-import 'animate.css';
 import ScrollAnimation from 'react-animate-on-scroll';
-
 
 
 export function Greetings() {
@@ -23,6 +21,8 @@ export function Greetings() {
 
     const [greeting, setGreeting] = useState([]);
     const [showGreeting, setShowGreeting] = useState(false);
+    const [visibleItems, setVisibleItems] = useState([]); // Track visibility of items
+  const itemRefs = useRef([]);
 
     useEffect(() => {
         fetchGreeting();
@@ -30,23 +30,54 @@ export function Greetings() {
       }
       , []);
 
+
+      useEffect(() => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const index = Number(entry.target.dataset.index);
+              if (entry.isIntersecting) {
+                // Add to visible items when in view
+                setVisibleItems((prev) => [...new Set([...prev, index])]);
+              } else {
+                // Remove from visible items when out of view
+                setVisibleItems((prev) => prev.filter((item) => item !== index));
+              }
+            });
+          },
+          { threshold: 0.1 } // Trigger when 10% of the item is visible
+        );
+    
+        itemRefs.current.forEach((ref) => {
+          if (ref) observer.observe(ref);
+        });
+    
+        return () => {
+          itemRefs.current.forEach((ref) => {
+            if (ref) observer.unobserve(ref);
+          });
+        };
+      }, [greeting]);
+
     return (
         <div className="greeting container">
             <div className = "row">
                 <div className="col">
         {showGreeting && (
             <ListGroup>
-                {greeting.map((item, index) => (
-                    index > 0 && 
-                    <ScrollAnimation animateIn="fadeIn" duration={5000} key={index}>
-   <ListGroup.Item key={index}>
-                    <h1>{item[1]}</h1>
+              {greeting.map((item, index) => (
+                index > 0 && (
+                  <ListGroup.Item
+                    key={index}
+                    ref={(el) => (itemRefs.current[index] = el)} 
+                    data-index={index}
+                    className={`p-3 ${visibleItems.includes(index) ? "fade-in" : "fade-out"}`} 
+                  >
+                    <h2>{item[1]}</h2>
                     <p>{item[2]}</p>
-                </ListGroup.Item>
-</ScrollAnimation>
-
-                   
-                ))}
+                  </ListGroup.Item>
+                )
+              ))}
             </ListGroup>
         )}
         </div>
