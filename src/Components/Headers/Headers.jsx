@@ -8,10 +8,23 @@ export const Header1 = ({headname, ransom = false}) => {
         </div>
     );
     }
-export const Header2 = ({headname}) => {
+
+export const Header2 = ({headname, ransom = false}) => {
+    console.log(ransom)
     return (
-        <div className="header2">
+        // <div >
+        <div className={`header1 ${ransom ? 'barrio-regular' : 'anton-regular'}`}>
         <h2>{headname}</h2>
         </div>
     );
     }
+export const Header3 = ({headname, ransom = false}) => {
+    console.log(ransom)
+    return (
+        // <div >
+        <div className={`header1 ${ransom ? 'barrio-regular' : 'anton-regular'}`}>
+        <h3>{headname}</h3>
+        </div>
+    );
+    }
+

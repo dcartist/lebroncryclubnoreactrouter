@@ -1,8 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import ListGroup from 'react-bootstrap/ListGroup';
-import ScrollAnimation from 'react-animate-on-scroll';
-
+import { Header3 } from '../../Components/Headers/Headers'
 
 export function Greetings() {
     const fetchGreeting = async () => {
@@ -73,7 +72,7 @@ export function Greetings() {
                     data-index={index}
                     className={`p-3 ${visibleItems.includes(index) ? "fade-in" : "fade-out"}`} 
                   >
-                    <h2>{item[1]}</h2>
+                    <Header3 headname={item[1]} />
                     <p>{item[2]}</p>
                   </ListGroup.Item>
                 )
