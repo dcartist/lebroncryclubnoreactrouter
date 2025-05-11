@@ -59,7 +59,7 @@ export function Greetings() {
       }, [greeting]);
 
     return (
-        <div className="greeting container">
+        <div className="greeting container min-vh-100">
             <div className = "row">
                 <div className="col">
         {showGreeting && (

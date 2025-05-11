@@ -1,21 +1,18 @@
 import "./App.css";
-import { MainPage } from "./Sections/home/mainpage";
-import { Gallery } from "./Sections/Gallery/gallery";
-import { Poem } from "./Sections/Poem/poem";
-import { Konami } from "./Sections/Konami/konami";
-import { Greetings } from "./Sections/Greetings/greetings";
+import {Link, Route, Routes } from "react-router-dom";
+import HomePage from "./homepage.jsx"
+import {EasterEggPage} from "./Sections/EasterEgg/EasterEggHome.jsx";
 
 function App() {
 
-  console.log(import.meta.env.VITE_API_URL);
   return (
     <>
+
+   <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/secret" element={<EasterEggPage />} />
    
-      <MainPage />
-      <Gallery></Gallery>
-      <Poem/>
-      <Greetings/> 
-      <Konami></Konami>
+  </Routes>
     </>
   );
 }

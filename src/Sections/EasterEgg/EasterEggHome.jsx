@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const EasterEgg = () => {
+export const EasterEggPage = () => {
   return (
     <div>
       <h1>Lebron Cry Club</h1>

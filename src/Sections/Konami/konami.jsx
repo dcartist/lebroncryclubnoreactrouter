@@ -49,11 +49,12 @@ export function Konami() {
   
     if (newSequence.join('') === konamiCode.join('')) {
       // Full sequence matched
-      setShowModal(true);
+      // setShowModal(true);
       setErrorMessage('');
       setKeySequence([]);
       setCurrentStep(0);
       setInputValue('');
+      window.location.href = '/secret';
     } else {
       // Go to next step
       setCurrentStep(currentStep + 1);
@@ -142,10 +143,11 @@ export function Konami() {
           </div>
 
           {/* Large Button */}
-          <div style={{ marginTop: '20px' }}>
+          <div style={{ marginTop: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center'}} className='m-auto' >
   <Button
     onClick={handleButtonClick}
-    style={{ padding: '20px 40px', fontSize: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+    style={{ padding: '40px 40px', fontSize: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', backgroundColor: '#007bff', color: 'white', border: 'none', cursor: 'pointer', width: '200px', height: '200px' }}
+    className="konami-button"
   >
     {getButtonIconForKey()} {/* Dynamically display the correct icon */}
   </Button>
