@@ -283,20 +283,24 @@ const CubeAnimation = () => {
           alignItems: "center",
           justifyContent: "center",
           pointerEvents: "none",
-          userSelect: "none"
+          userSelect: "none",
+          overflow: "hidden"
         }}>
           <span style={{
-            fontSize: "80vw",
+            fontSize: "min(16vw, 40vh)",
             fontWeight: "bold",
-            wordBreak: "none",
-            color: "#e0e0e0",
+            color: "white",
             opacity: 1,
             fontFamily: "Anton, sans-serif",
             letterSpacing: "1vw",
             textTransform: "uppercase",
             textAlign: "center",
             lineHeight: 1,
-            textShadow: "0 4px 32px #000, 0 1px 2px #000, 0 0px 1px #000"
+            textShadow: "0 8px 48px #000, 0 4px 8px #000, 0 0px 4px #000, 0 0 0.5em #000",
+            whiteSpace: "nowrap",
+            width: "100%",
+            overflow: "hidden",
+            textOverflow: "ellipsis"
           }}>
             CUBE ZONE
           </span>
