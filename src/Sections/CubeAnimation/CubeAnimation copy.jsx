@@ -38,42 +38,38 @@ const CubeAnimation = () => {
       const lights = {};
   
       function createLights() {
-        // Add a soft ambient light
-        const ambient = new THREE.AmbientLight(0xffffff, 0.4);
-        scene.add(ambient);
-    
         const orbitingSpotLight = new THREE.SpotLight("white");
-        orbitingSpotLight.intensity = 1.2; // was 4400
+        orbitingSpotLight.intensity = 4400;
         orbitingSpotLight.angle = Math.PI / 4;
         orbitingSpotLight.position.set(2, -2, 12);
         orbitingSpotLight.penumbra = 0.7;
         orbitingSpotLight.decay = 1.1;
         scene.add(orbitingSpotLight);
         lights.orbiting = orbitingSpotLight;
-    
+  
         const spotLightYAxis = new THREE.SpotLight("white");
-        spotLightYAxis.intensity = 1.2; // was 6500
+        spotLightYAxis.intensity = 6500;
         spotLightYAxis.angle = Math.PI / 3;
         spotLightYAxis.position.set(10, 0, -3);
         scene.add(spotLightYAxis);
         lights.yAxis = spotLightYAxis;
-    
+  
         const spotLightXAxis = new THREE.SpotLight("white");
-        spotLightXAxis.intensity = 0.8; // was 3300
+        spotLightXAxis.intensity = 3300;
         spotLightXAxis.angle = Math.PI / 2;
         spotLightXAxis.position.set(0, 10, 0);
         scene.add(spotLightXAxis);
         lights.xAxis = spotLightXAxis;
-    
+  
         const frontIllumination = new THREE.SpotLight("white");
-        frontIllumination.intensity = 1.0; // was 6300
+        frontIllumination.intensity = 6300;
         frontIllumination.angle = Math.PI / 4;
         frontIllumination.position.set(2, -1, 12);
         scene.add(frontIllumination);
         lights.front = frontIllumination;
-    
+  
         const backIllumination = new THREE.SpotLight("white");
-        backIllumination.intensity = 0.8; // was 6300
+        backIllumination.intensity = 6300;
         backIllumination.angle = Math.PI / 4;
         backIllumination.position.set(4, 5, -22);
         scene.add(backIllumination);
@@ -129,52 +125,27 @@ const CubeAnimation = () => {
       function createRubik() {
         const cubeDepth = 3;
         const cubeEdgeLength = 3;
-
-        const cubeBlue = 0x3b82f6; // Medium blue (#3b82f6)
   
         for (let zIdx = 0; zIdx < cubeDepth; zIdx++) {
           for (let xIdx = 0; xIdx < cubeEdgeLength; xIdx++) {
             for (let yIdx = 0; yIdx < cubeEdgeLength; yIdx++) {
               const geometry = createExtrudeGeometry();
-  
-              // All cubes medium blue
-              const color = cubeBlue;
-  
-              // Main colored cube
               const material = new THREE.MeshStandardMaterial({
-                color,
-                metalness: 0.31,
+                color: "black",
+                metalness: 0.71,
                 roughness: 0.21,
                 side: THREE.DoubleSide,
               });
               const elementCube = new THREE.Mesh(geometry, material);
-  
-              // Very thin white border: slightly larger cube, wireframe
-              const borderGeometry = geometry.clone();
-              borderGeometry.scale(1.015, 1.015, 1.015); // Slightly larger for a very thin border
-              const borderMaterial = new THREE.MeshBasicMaterial({
-                color: "white",
-                wireframe: true,
-                wireframeLinewidth: 0.5, // Very thin
-              });
-              const borderMesh = new THREE.Mesh(borderGeometry, borderMaterial);
-  
               const elementGap = 1.2;
+  
               elementCube.position.x = xIdx * elementGap;
               elementCube.position.y = yIdx * elementGap;
               elementCube.position.z = zIdx * elementGap;
-              borderMesh.position.copy(elementCube.position);
   
-              if (yIdx === 0) {
-                layers.bottom.add(elementCube);
-                layers.bottom.add(borderMesh);
-              } else if (yIdx === 1) {
-                layers.mid.add(elementCube);
-                layers.mid.add(borderMesh);
-              } else if (yIdx === 2) {
-                layers.top.add(elementCube);
-                layers.top.add(borderMesh);
-              }
+              if (yIdx === 0) layers.bottom.add(elementCube);
+              else if (yIdx === 1) layers.mid.add(elementCube);
+              else if (yIdx === 2) layers.top.add(elementCube);
             }
           }
         }
@@ -276,7 +247,7 @@ const CubeAnimation = () => {
           position: "absolute",
           top: 0,
           left: 0,
-          width: "100vw",
+          width: "100%",
           height: "100%",
           zIndex: 2,
           display: "flex",
@@ -286,17 +257,14 @@ const CubeAnimation = () => {
           userSelect: "none"
         }}>
           <span style={{
-            fontSize: "80vw",
+            fontSize: "10vw",
             fontWeight: "bold",
-            wordBreak: "none",
             color: "#e0e0e0",
-            opacity: 1,
-            fontFamily: "Anton, sans-serif",
+            opacity: 0.15,
             letterSpacing: "1vw",
             textTransform: "uppercase",
             textAlign: "center",
             lineHeight: 1,
-            textShadow: "0 4px 32px #000, 0 1px 2px #000, 0 0px 1px #000"
           }}>
             CUBE ZONE
           </span>
