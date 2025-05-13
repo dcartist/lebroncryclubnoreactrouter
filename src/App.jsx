@@ -1,7 +1,7 @@
 import "./App.css";
 import {Link, Route, Routes } from "react-router-dom";
 import HomePage from "./homepage.jsx"
-import {EasterEggPage} from "./Sections/EasterEgg/EasterEggHome.jsx";
+import EasterEggPage from "./Sections/EasterEgg/EasterEggHome.jsx";
 
 function App() {
 
@@ -11,7 +11,6 @@ function App() {
    <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/secret" element={<EasterEggPage />} />
-   
   </Routes>
     </>
   );

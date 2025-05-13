@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const EasterEggPage = () => {
+ const EasterEggPage = () => {
   return (
     <div>
       <h1>Lebron Cry Club</h1>
@@ -9,3 +9,5 @@ export const EasterEggPage = () => {
     </div>
   );
 }
+
+export default EasterEggPage;
