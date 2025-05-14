@@ -75,7 +75,8 @@ function Scene({ numStars = 100 }) {
 
 export default function MoreCubes() {
   return (
-    <div className="container" style={{ height: "130vh", width: "100vw", position: "relative" }}>
+    <div className="containerCube">
+    {/* <div className="containerCube" style={{ height: "130vh", width: "100vw", position: "relative" }}> */}
           <p>The Cube Zone</p>
       <Canvas gl={{ antialias: false }}>
         <Scene />  
