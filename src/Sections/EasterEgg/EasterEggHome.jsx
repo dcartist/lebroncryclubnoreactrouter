@@ -1,10 +1,21 @@
-import React from 'react';
-import CubeAnimation from '../CubeAnimation/CubeAnimation';
+import React, { Suspense, lazy } from 'react';
+// import CubeAnimation from '../CubeAnimation/CubeAnimation';
+// import MoreCubes from '../CubeAnimation/MoreCubes';
+const CubeAnimation = lazy(() => import('../CubeAnimation/CubeAnimation'));
+const MoreCubes = lazy(() => import('../CubeAnimation/MoreCubes'));
 
  const EasterEggPage = () => {
   return (
+
     <div>
-      <div className='graphpaper'>      <CubeAnimation /></div>
+ <Suspense fallback={<div>Loading cubes...</div>}>
+        <MoreCubes />
+      </Suspense>
+ <Suspense fallback={<div>Loading cubes...</div>}>
+        <div className='graphpaper'>
+          <CubeAnimation />
+        </div>
+      </Suspense>
 
       <h1>Lebron Cry Club</h1>
       <p>Welcome to the Lebron Cry Club! Here, we celebrate the moments that make us cry, laugh, and everything in between. Join us in our journey through the ups and downs of life!</p>

@@ -1,0 +1,47 @@
+canvas {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: pixelated;
+  image-rendering: optimize-contrast;
+}
+
+
+code {
+  font-family: input-mono, monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+::-webkit-scrollbar {
+  height: 12px;
+  width: 5px;
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--background);
+}
+
+
+.cubedBackground {
+  background: linear-gradient(45deg, #000000, #000000);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 300vh
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

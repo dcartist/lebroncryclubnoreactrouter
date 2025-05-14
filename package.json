@@ -10,17 +10,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/fiber": "^9.1.2",
     "animate.css": "^4.1.1",
     "axios": "^1.9.0",
     "bootstrap": "^5.3.6",
-    "framer-motion": "^12.10.1",
+    "framer-motion": "^12.11.3",
     "gsap": "^3.13.0",
+    "popmotion": "^11.0.5",
     "react": "^19.1.0",
     "react-animate-on-scroll": "^2.1.9",
     "react-bootstrap": "^2.10.9",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.6.0",
+    "react-three": "^0.9.7",
     "three": "^0.176.0"
   },
   "devDependencies": {
