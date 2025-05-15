@@ -1,10 +1,24 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Image, Modal, Button } from 'react-bootstrap';
 
-// Dynamically import all images from the anime folder
-const images = Object.values(
-  import.meta.glob('../../components/Images/anime/*.{jpg,jpeg,png,gif,webp}', { eager: true, as: 'url' })
-);
+// List image filenames
+const imageFilenames = [
+  "lebronAlpha1.jpeg",
+  "lebronAlpha2.jpeg",
+  "lebronAlpha3.jpeg",
+  "lebronAlpha4.jpeg",
+  "lebronAlpha5.jpeg",
+  "lebronAlpha6.jpeg",
+  "lebronAlpha7.jpeg",
+  "lebronAlpha8.jpeg",
+  "lebronAlpha9.jpeg",
+  "lebronAlpha10.jpeg",
+  "lebronAlpha11.jpeg",
+  "lebronAlpha12.jpeg",
+];
+
+// Build URLs for public folder
+const images = imageFilenames.map(name => `images/anime/${name}`);
 
 export const Gallery = () => {
   const [show, setShow] = useState(false);
