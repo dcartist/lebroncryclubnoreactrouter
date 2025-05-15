@@ -18,7 +18,7 @@ const imageFilenames = [
 ];
 
 // Build URLs for public folder
-const images = imageFilenames.map(name => `images/anime/${name}`);
+const images = imageFilenames.map(name => `/images/anime/${name}`);
 
 export const Gallery = () => {
   const [show, setShow] = useState(false);
