@@ -11,6 +11,7 @@ function HomePage() {
       <MainPage />
       <Gallery></Gallery>
       <Poem/>
+      <Gallery></Gallery>
       <Greetings/> 
       <Konami></Konami>
     </>

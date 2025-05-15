@@ -75,12 +75,50 @@ function Scene({ numStars = 100 }) {
 
 export default function MoreCubes() {
   return (
-    <div className="containerCube">
-    {/* <div className="containerCube" style={{ height: "130vh", width: "100vw", position: "relative" }}> */}
-          <p>The Cube Zone</p>
-      <Canvas gl={{ antialias: false }}>
-        <Scene />  
+    <div
+      className="containerCube"
+      style={{
+        position: "relative",
+        width: "100vw",
+        height: "100vh",
+        overflow: "hidden",
+      }}
+    >
+      {/* 3D Cube fills the background */}
+      <Canvas
+        gl={{ antialias: false }}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          zIndex: 1,
+          pointerEvents: "none",
+        }}
+      >
+        <Scene />
       </Canvas>
+      {/* Foreground content is scrollable */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 2,
+          width: "100%",
+          height: "100%",
+          overflowY: "auto",
+          pointerEvents: "auto",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "flex-start",
+          paddingTop: "2rem",
+        }}
+      >
+        <p>The Cube Zone</p>
+        {/* Add more scrollable content here */}
+        <div style={{ height: "150vh" }} />
+      </div>
     </div>
   );
 }
