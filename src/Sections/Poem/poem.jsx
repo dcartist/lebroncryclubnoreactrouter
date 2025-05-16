@@ -8,7 +8,7 @@ import './poem.css'
 export const Poem = () => {
 return(
     <div className="mb-5">
-        <div className="lebronGod"></div>
+        
         <div className="lebronAlpha"></div>
         <div className="container  d-flex text-center justify-content-center align-items-center flex-column" >
       <Row>
@@ -37,6 +37,7 @@ LeBron, a king for all our days.
         <Col><Header1 headname="ALpha, If YOU WISH NOT to Have Your NAME as the writer of this POEM.. Please HAVE a HAPPY BIRThdAY" ransom={true} /></Col>
       </Row>
     </div>
+    <div className="lebronGod mt-5"></div>
 </div>
 )
 }
