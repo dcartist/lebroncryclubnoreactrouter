@@ -22,6 +22,7 @@
     "react-bootstrap": "^2.10.9",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
+    "react-player": "^2.16.0",
     "react-router-dom": "^7.6.0",
     "react-three": "^0.9.7",
     "three": "^0.176.0"

@@ -11,8 +11,8 @@ export function Greetings() {
           if (response.data) {
             setShowGreeting(true);
           }
-          console.log ("triggered")
-          console.log(response.data);
+          // console.log ("triggered")
+          // console.log(response.data);
         } catch (error) {
           console.error("Error fetching greeting:", error);
         }
@@ -25,7 +25,7 @@ export function Greetings() {
 
     useEffect(() => {
         fetchGreeting();
-        console.log("fetchGreeting");
+        // console.log("fetchGreeting");
       }
       , []);
 

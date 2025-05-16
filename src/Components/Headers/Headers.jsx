@@ -1,6 +1,6 @@
 
 export const Header1 = ({headname, ransom = false}) => {
-    console.log(ransom)
+    
     return (
         // <div >
         <div className={`header1 ${ransom ? 'barrio-regular' : 'anton-regular'}`}>
@@ -10,7 +10,7 @@ export const Header1 = ({headname, ransom = false}) => {
     }
 
 export const Header2 = ({headname, ransom = false}) => {
-    console.log(ransom)
+    
     return (
         // <div >
         <div className={`header1 ${ransom ? 'barrio-regular' : 'anton-regular'}`}>
@@ -19,7 +19,7 @@ export const Header2 = ({headname, ransom = false}) => {
     );
     }
 export const Header3 = ({headname, ransom = false}) => {
-    console.log(ransom)
+    
     return (
         // <div >
         <div className={`header1 ${ransom ? 'barrio-regular' : 'anton-regular'}`}>
@@ -28,7 +28,7 @@ export const Header3 = ({headname, ransom = false}) => {
     );
     }
 export const HeaderBig = ({headname, ransom = false}) => {
-    console.log(ransom)
+    
     return (
         // <div >
         <div className={`header1 enormous-text ${ransom ? 'barrio-regular' : 'anton-regular'}`}>

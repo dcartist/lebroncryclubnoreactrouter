@@ -1,10 +1,12 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { Header1 } from '../../Components/Headers/Headers';
 import { FaArrowUp, FaArrowDown, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 export function Konami() {
+    const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [keySequence, setKeySequence] = useState([]);
   const [currentStep, setCurrentStep] = useState(0); // Track the current step in the sequence
@@ -146,13 +148,20 @@ export function Konami() {
           <div style={{ marginTop: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center'}} className='m-auto' >
   <Button
     onClick={handleButtonClick}
-    style={{ padding: '40px 40px', fontSize: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', backgroundColor: '#007bff', color: 'white', border: 'none', cursor: 'pointer', width: '200px', height: '200px' }}
+    style={{ padding: '40px 40px', fontSize: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', backgroundColor: 'black', color: 'white', border: 'none', cursor: 'pointer', width: '200px', height: '200px' }}
     className="konami-button"
   >
     {getButtonIconForKey()} {/* Dynamically display the correct icon */}
   </Button>
 </div>
-
+ <div style={{ marginTop: '30px' }}>
+            <Button
+              variant="dark"
+              onClick={() => navigate('/secret')}
+            >
+              Skip Code and go to the Secret Page
+            </Button>
+          </div>
           {/* Error Message */}
           {errorMessage && (
             <div style={{ color: 'red', marginTop: '10px' }}>

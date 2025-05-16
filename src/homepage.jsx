@@ -4,6 +4,8 @@ import { Poem } from "./Sections/Poem/poem";
 import { Konami } from "./Sections/Konami/konami";
 import { Greetings } from "./Sections/Greetings/greetings";
 import { Header2, Header1, Header3 } from "./Components/Headers/Headers";
+import Button from 'react-bootstrap/Button';
+
 
 function HomePage() {
   return (
