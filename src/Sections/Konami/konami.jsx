@@ -157,7 +157,10 @@ export function Konami() {
  <div style={{ marginTop: '30px' }}>
             <Button
               variant="dark"
-              onClick={() => navigate('/secret')}
+               onClick={() => {
+      navigate('/secret');
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }}
             >
               Skip Code and go to the Secret Page
             </Button>
