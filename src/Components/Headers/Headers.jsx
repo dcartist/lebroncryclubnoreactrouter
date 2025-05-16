@@ -27,4 +27,13 @@ export const Header3 = ({headname, ransom = false}) => {
         </div>
     );
     }
+export const HeaderBig = ({headname, ransom = false}) => {
+    console.log(ransom)
+    return (
+        // <div >
+        <div className={`header1 enormous-text ${ransom ? 'barrio-regular' : 'anton-regular'}`}>
+        <h1>{headname}</h1>
+        </div>
+    );
+    }
 

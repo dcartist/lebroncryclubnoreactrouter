@@ -13,7 +13,21 @@
   font-style: normal;
 }
 
+.donuts {
+  height: 100vh;
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url('/image/donuts.svg');
+  background-position: center;
+  background-size: cover;
+  color: white;
 
+  box-shadow: 0 8px 48px 0 rgba(0,0,0,0.45), 0 1.5px 8px 0 rgba(0,0,0,0.25);
+
+}
 .large-scale-screen{
   height: 100vh;
   display: flex;
@@ -23,6 +37,8 @@
   flex-direction: column;
   background-color: black;
   color: white;
+  font-size: larger;
+
 
 }
 
