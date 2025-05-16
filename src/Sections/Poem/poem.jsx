@@ -11,7 +11,7 @@ return(
         
         <div className="lebronAlpha"></div>
         <div className="container  d-flex text-center justify-content-center align-items-center flex-column" >
-      <Row>
+      <Row className="mt-5">
         <Col><Header1 headname="Ode to LeBron James" />
     <p className="enormous-text">
     LeBron takes flight on wings of flame,

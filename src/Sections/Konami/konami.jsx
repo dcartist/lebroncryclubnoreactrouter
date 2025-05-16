@@ -94,7 +94,7 @@ export function Konami() {
     <div className="container-fluid vh-100 d-flex text-center justify-content-center align-items-center" style={{ backgroundColor: '#f0f0f0' }}>
       <div className="row">
         <div className="col">
-          <Header1 headname="ENTER THE KONAMI CODE" />
+          <Header1 headname="PRESS THE BUTTON TO ENTER THE KONAMI CODE" />
 
           {/* Top Icons */}
           <div style={{ display: 'flex', margin: '20px auto', gap: '10px', justifyContent: 'center', flexDirection: 'row' }}>
@@ -153,18 +153,6 @@ export function Konami() {
   </Button>
 </div>
 
-          {/* Input Field */}
-          <div style={{ margin: '20px' }}>
-            <input
-              ref={inputRef}
-              type="text"
-              value={inputValue} // Bind the input field to the state
-              placeholder="Insert the Konami Code here"
-              style={{ padding: '10px', width: '300px' }}
-              readOnly // Make the input field read-only
-            />
-          </div>
-
           {/* Error Message */}
           {errorMessage && (
             <div style={{ color: 'red', marginTop: '10px' }}>
@@ -172,18 +160,6 @@ export function Konami() {
             </div>
           )}
 
-          {/* Modal */}
-          <Modal show={showModal} onHide={() => setShowModal(false)}>
-            <Modal.Header closeButton>
-              <Modal.Title>Konami Code Activated!</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>Congratulations! You unlocked the secret modal.</Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={() => setShowModal(false)}>
-                Close
-              </Button>
-            </Modal.Footer>
-          </Modal>
         </div>
       </div>
     </div>
