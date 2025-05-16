@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 import './poem.css'
 export const Poem = () => {
 return(
-    <div>
+    <div className="mb-5">
         <div className="lebronGod"></div>
         <div className="lebronAlpha"></div>
         <div className="container  d-flex text-center justify-content-center align-items-center flex-column" >
