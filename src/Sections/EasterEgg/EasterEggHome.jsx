@@ -41,7 +41,7 @@ const MoreCubes = lazy(() => import('../CubeAnimation/MoreCubes'));
     <Header2  headname={"If you wish to add a birthday greeting, please go to the site below"}/>
 
 
-      <Button href="https://forms.gle/Nmxx28AjYtV8CPxj9" target="_blank" variant="outline-light">Click here to enter in a message</Button>
+      <Button size="lg" href="https://forms.gle/Nmxx28AjYtV8CPxj9" target="_blank" variant="outline-light">Click here to enter in a message</Button>
       </div>
 
     </div>

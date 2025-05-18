@@ -157,6 +157,7 @@ export function Konami() {
  <div style={{ marginTop: '30px' }}>
             <Button
               variant="dark"
+              size="lg"
                onClick={() => {
       navigate('/secret');
       window.scrollTo({ top: 0, behavior: 'auto' });

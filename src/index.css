@@ -6,6 +6,16 @@
   font-weight: 400;
   font-style: normal;
 }
+.headertop{
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  font-weight: bolder;
+}
 
 .barrio-regular {
   font-family: "Barrio", sans-serif;

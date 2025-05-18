@@ -10,6 +10,7 @@ import Button from 'react-bootstrap/Button';
 function HomePage() {
   return (
     <>
+    <div className="headertop"> If you want you can leave your trolling message for Djalphamusic <Button variant="outline-light" href="https://forms.gle/Nmxx28AjYtV8CPxj9" target="_blank"> Click here to leave a message</Button></div>
       <MainPage />
      
       <div className="large-scale-screen mb-5">
