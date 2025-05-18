@@ -1,36 +1,36 @@
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import ListGroup from 'react-bootstrap/ListGroup';
-import { Header3 } from '../../Components/Headers/Headers'
+import { Header3, Header2 } from '../../Components/Headers/Headers'
 
 export function Greetings() {
     const fetchGreeting = async () => {
         try {
+          setLoading(true);
           const response = await axios.get(import.meta.env.VITE_API_URL);
           setGreeting(response.data);
           if (response.data) {
             setShowGreeting(true);
           }
-          // console.log ("triggered")
-          // console.log(response.data);
         } catch (error) {
           console.error("Error fetching greeting:", error);
+        } finally {
+          setLoading(false);
         }
       }
 
     const [greeting, setGreeting] = useState([]);
     const [showGreeting, setShowGreeting] = useState(false);
     const [visibleItems, setVisibleItems] = useState([]); // Track visibility of items
-  const itemRefs = useRef([]);
+    const [loading, setLoading] = useState(true);
+    const itemRefs = useRef([]);
 
     useEffect(() => {
         fetchGreeting();
-        // console.log("fetchGreeting");
       }
       , []);
 
-
-      useEffect(() => {
+    useEffect(() => {
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
@@ -60,31 +60,38 @@ export function Greetings() {
 
     return (
         <div className="greeting container min-vh-100">
-            <div className = "row">
+            <div className="row">
                 <div className="col">
-        {showGreeting && (
-            <ListGroup>
-              {greeting.map((item, index) => (
-                index > 0 && (
-                  <ListGroup.Item
-                    key={index}
-                    ref={(el) => (itemRefs.current[index] = el)} 
-                    data-index={index}
-                    className={`p-3 ${visibleItems.includes(index) ? "fade-in" : "fade-out"}`} 
-                  >
-                    <Header3 headname={item[1]} />
-                    <p>
-                      {typeof item[2] === "string"
-                        ? item[2].replace(/47/g, "**")
-                        : item[2]}
-                    </p>
-                  </ListGroup.Item>
-                )
-              ))}
-            </ListGroup>
-        )}
-        </div>
-        </div>
+                  {loading ? (
+                    <div className="text-center py-5" style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column" }}>
+                      <div> <Header2 headname="Loading greetings..."/> </div>
+                      <div className="spinner-border text-primary" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                      </div>
+                    </div>
+                  ) : showGreeting && (
+                    <ListGroup className="mb-5 mt-5">
+                      {greeting.map((item, index) => (
+                        index > 0 && (
+                          <ListGroup.Item
+                            key={index}
+                            ref={(el) => (itemRefs.current[index] = el)} 
+                            data-index={index}
+                            className={`p-3 ${visibleItems.includes(index) ? "fade-in" : "fade-out"}`} 
+                          >
+                            <Header3 headname={item[1]} />
+                            <p>
+                              {typeof item[2] === "string"
+                                ? item[2].replace(/47/g, "**")
+                                : item[2]}
+                            </p>
+                          </ListGroup.Item>
+                        )
+                      ))}
+                    </ListGroup>
+                  )}
+                </div>
+            </div>
         </div>
     );
-    }
+}
