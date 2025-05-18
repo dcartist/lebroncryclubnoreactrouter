@@ -73,7 +73,11 @@ export function Greetings() {
                     className={`p-3 ${visibleItems.includes(index) ? "fade-in" : "fade-out"}`} 
                   >
                     <Header3 headname={item[1]} />
-                    <p>{item[2]}</p>
+                    <p>
+                      {typeof item[2] === "string"
+                        ? item[2].replace(/47/g, "**")
+                        : item[2]}
+                    </p>
                   </ListGroup.Item>
                 )
               ))}
